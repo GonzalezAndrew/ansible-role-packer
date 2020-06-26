@@ -1,0 +1,36 @@
+galaxy_info:
+  role_name: packer
+  author: Andrew Gonzalez
+  description: "Packer for Linux"
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Centos
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Amazon Linux 2
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+
+  galaxy_tags:
+    - development
+    - system
+    - image
+    - box
+    - packer
+    - virtualbox
+    - vagrant
+    - ami
+    - aws
+    - droplet
+    - packaging
+    - build
+    - cloud
+
+dependencies: []
