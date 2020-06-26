@@ -14,7 +14,7 @@ Role Variables
 
 Below are the role variables and their default values.
 ```
-packer_version: 0.12.6
+packer_version: 1.6.0
 ```
 The Packer version to install.
 ```
