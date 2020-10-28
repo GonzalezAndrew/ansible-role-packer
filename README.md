@@ -1,5 +1,5 @@
 ![Build](https://github.com/GonzalezAndrew/ansible-role-packer/workflows/Molecule/badge.svg)
-Role Name
+Packer
 =========
 
 Installs Packer a software tool for creating machine images.
