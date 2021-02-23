@@ -9,5 +9,8 @@ rules:
 ignore: |
   .github/
   /.github/
-  ansible-role-terraform/.github/
-  /ansible-role-terraform/.github/
+  .cache/
+  ansible-role-packer/.github/
+  /ansible-role-packer/.github/
+  /ansible-role-packer/.cache/
+  ansible-role-packer/.cache
