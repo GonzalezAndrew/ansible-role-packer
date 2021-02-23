@@ -9,8 +9,7 @@ defaults:
   run:
     working-directory: 'ansible-role-packer'
 
-obs:
-
+jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
