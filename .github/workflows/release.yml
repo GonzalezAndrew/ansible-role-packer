@@ -1,6 +1,6 @@
 ---
 name: Release
-on:
+'on':
   push:
     tags:
       - '*'
@@ -10,6 +10,7 @@ defaults:
     working-directory: 'ansible-role-packer'
 
 jobs:
+
   release:
     name: Release
     runs-on: ubuntu-latest
@@ -17,7 +18,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: "${{ github.repository }}"
+          path: 'ansible-role-packer'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
