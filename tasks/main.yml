@@ -4,22 +4,13 @@
     name: unzip
     state: present
 
-- name: Check Packer Version
-  shell: |
-    set -o pipefail
-    packer --version | head -n 1 | awk 'print $2'
-  register: packer_version_check
-  changed_when: packer_version_check.stdout != packer_version
-  ignore_errors: true
+- name: Verify packer is not installed
+  package:
+    name: packer
+    state: absent
 
 - name: Download Packer
   unarchive:
     src: "{{ packer_download_url }}"
     dest: "{{ packer_bin_path }}"
     remote_src: true
-  when: packer_version_check.stdout != packer_version
-
-- name: Verify Packer is installed
-  shell: |
-    {{ packer_bin_path }}/packer --version
-  when: packer_version_check.stdout != packer_version

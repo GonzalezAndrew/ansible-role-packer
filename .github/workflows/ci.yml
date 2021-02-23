@@ -1,0 +1,60 @@
+---
+name: CI
+'on':
+  pull_request:
+  push:
+    branches:
+      - master
+
+defaults:
+  run:
+    working-directory: 'ansible-role-packer'
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  path: ansible-role-packer
+
+            - name: Set up Python
+              uses: actions/setup-python@v2
+              with:
+                  python-version: '3.x'
+
+            - name: Install dependencies
+              run: pip3 install ansible yamllint ansible-lint
+
+            - name: Lint code
+              run: |
+                yamllint .
+                ansible-lint
+    molecule:
+        runs-on: ubuntu-latest
+        strategy:
+            max-parallel: 4
+            matrix:
+                molecule_distro: [amazonlinux2, centos8, ubuntu1804]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  path: ansible-role-packer
+
+            - name: Set up Python
+              uses: actions/setup-python@v2
+              with:
+                  python-version: '3.x'
+
+            - name: Install dependencies
+              run: pip3 install ansible molecule[docker] docker
+
+            - name: Test with molecule
+              run: molecule --debug test
+              env:
+                  PY_COLORS: '1'
+                  ANSIBLE_FORCE_COLOR: '1'
+                  MOLECULE_DISTRO: ${{ matrix.molecule_distro }}
+                  ROLE_NAME: 'ansible-role-packer'

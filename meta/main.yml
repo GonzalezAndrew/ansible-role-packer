@@ -1,7 +1,8 @@
+---
 galaxy_info:
   role_name: packer
   author: Andrew Gonzalez
-  description: "Packer for Linux"
+  description: "Install Paker"
   license: MIT
   min_ansible_version: 2.9
   platforms:

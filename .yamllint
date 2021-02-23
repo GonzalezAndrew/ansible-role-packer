@@ -3,6 +3,11 @@ extends: default
 
 rules:
   line-length:
-    max: 180
+    max: 200
     level: warning
-  truthy: disable
+
+ignore: |
+  .github/
+  /.github/
+  ansible-role-terraform/.github/
+  /ansible-role-terraform/.github/
