@@ -1,4 +1,4 @@
-![Build](https://github.com/GonzalezAndrew/ansible-role-packer/workflows/Molecule/badge.svg)
+[![CI](https://github.com/GonzalezAndrew/ansible-role-packer/actions/workflows/ci.yml/badge.svg)](https://github.com/GonzalezAndrew/ansible-role-packer/actions/workflows/ci.yml)
 Packer
 =========
 
