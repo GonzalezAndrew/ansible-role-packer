@@ -1,5 +1,5 @@
 ---
-packer_version: 1.7.0
+packer_version: 1.8.2
 packer_bin_path: /usr/local/bin/
 packer_os: "linux"
 packer_arch: "amd64"
